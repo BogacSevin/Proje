@@ -20,7 +20,6 @@
       <b-form-input id="input-horizontal" type="password" v-model="form.password" class="mt-2" placeholder="Verify Your Password "></b-form-input>
     </b-form-group>
     <b-button class="mt-1" id="input-button" @click="changePassword" variant="outline-primary">Change Password</b-button>
-
       </b-form>
   </div>
 </div>
@@ -32,9 +31,9 @@ export default ({
     data(){
          return {
         form: {
-          token: 'E14CC4AB-7C8B-4C43-ADC7-2B2494289E9B',
+          token: '45696FC3-3EA2-4405-A10B-782B5D078BC2',
           email: 'fintechtestuser@yandex.com',
-          password: '1234',
+          password: '99salman99*',
         }, 
       }
     },
@@ -49,6 +48,7 @@ export default ({
           'https://dev-smoothie-api.fintechyazilim.com/api/User/ForgotPasswordChange',
           formData
         ).then(response => {
+          this.$swal('Şifre Değiştirme Talebi Başarılı');
           console.log(response);
         }).catch((error) => {
           console.log(error)

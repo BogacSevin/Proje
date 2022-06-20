@@ -57,7 +57,7 @@ import axios from 'axios';
         fpemail: null,
         form: {
           email: 'fintechtestuser@yandex.com',
-          password: '1234',
+          password: '99salman99*',
           LoginType: '50dcd869-eeb3-ec11-ac1f-000c29330757'
         },
          

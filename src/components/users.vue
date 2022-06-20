@@ -1,10 +1,9 @@
 <template>
-    <div>
-        
-        <div v-if="selectedUser">
-            <button class="btn btn-primary" @click="selectedUser = null">Geri</button>
-<profil :account="selectedUser"></profil>               
-            
+    <div>    
+        <div  v-if="selectedUser">
+            <button class="btn btn-primary" id="button" @click="selectedUser = null">Geri</button>
+            <profil :account="selectedUser"></profil>  
+            <button  class="btn btn-primary" id="button1" @click="doLogout">Çıkış</button>             
         </div>
         <div v-else>
             <table class="table">
@@ -35,6 +34,7 @@
 <script>
 import axios from 'axios';
 import profil from './Profil.vue';
+import { mapActions } from 'vuex';
 
 
 export default {
@@ -59,6 +59,11 @@ export default {
       this.Api();
   },
   methods:{
+      ...mapActions(['logout']),
+      doLogout() {
+        this.logout()
+        this.$router.push({ name: "Login" });
+      },
     setUser(user) {
         console.table(user)
     this.selectedUser = user;
@@ -83,5 +88,13 @@ export default {
     height: 800px;
     border: 1px solid;
     margin-left: 20%;
+}
+#button{
+float: left;
+margin-top: 663px;
+}
+#button1{
+float: left;
+margin-left: 10px;
 }
 </style>
