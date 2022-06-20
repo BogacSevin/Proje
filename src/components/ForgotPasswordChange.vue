@@ -32,7 +32,7 @@ export default ({
     data(){
          return {
         form: {
-          token: '19B095E4-906D-41C1-9E9E-14A2E7DAF5B3',
+          token: 'E14CC4AB-7C8B-4C43-ADC7-2B2494289E9B',
           email: 'fintechtestuser@yandex.com',
           password: '1234',
         }, 
@@ -49,7 +49,6 @@ export default ({
           'https://dev-smoothie-api.fintechyazilim.com/api/User/ForgotPasswordChange',
           formData
         ).then(response => {
-          this.$swal('Şifre Değiştirme Talebi Başarılı');
           console.log(response);
         }).catch((error) => {
           console.log(error)

@@ -22,19 +22,19 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, _, next) => {
-const authRequiredRoutes = ["Users", 'ChangePassword', 'Profil'];
-const authNotRequiredRoutes = ["Login", "ForgotPasswordChange"];
-const _isAuthenticated = store.getters.getIsLogin;
+	const authRequiredRoutes = ["Users", 'ChangePassword', 'Profil'];
+	const authNotRequiredRoutes = ["Login", "ForgotPasswordChange"];
+	const _isAuthenticated = store.getters.getIsLogin;
 
-if (authNotRequiredRoutes.indexOf(to.name) > -1 && _isAuthenticated) 
-next({ name: "/Login" });
+	if (authNotRequiredRoutes.indexOf(to.name) > -1 && _isAuthenticated) 
+		next({ name: "/Login" });
 
-if (authRequiredRoutes.indexOf(to.name) > -1) {
-if (_isAuthenticated) next();
-else next({ name: "Login" });
-} else {
-next();
-}
-});
+	if (authRequiredRoutes.indexOf(to.name) > -1) {
+	  if (_isAuthenticated) next();
+	  else next({ name: "Login" });
+	} else {
+	  next();
+	}
+  });
 
 export default router;

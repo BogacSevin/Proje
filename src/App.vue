@@ -3,20 +3,20 @@
   <div id="app">
     <router-view/>
 
-    <!-- <button @click="doLogout">Çıkış</button> -->
+    <button @click="doLogout">Çıkış</button>
   </div>
 </template>
  
 <script>
-// import { mapActions } from 'vuex';
+import { mapActions } from 'vuex';
 export default {
   name: 'App',
   methods: {
-      // ...mapActions(['logout']),
-      // doLogout() {
-      //   this.logout()
-      //   this.$router.push({ name: "Login" });
-      // }
+      ...mapActions(['logout']),
+      doLogout() {
+        this.logout()
+        this.$router.push({ name: "Login" });
+      }
   }
 }
 </script>
